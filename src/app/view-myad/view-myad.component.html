@@ -58,11 +58,28 @@
       <h4><strong>DESCRIPTION</strong></h4>
       <p class="description">{{ myAd.description }}</p>
 
+      <div *ngIf="logged" style="text-align:center">
+        <a (click)="setSeller()" class="btn btn-lg btn-dark"> Click for more details</a>
+      </div>
+      <div *ngIf="!logged" style="text-align:center">
+        <a routerLink="/login" class="btn btn-lg btn-dark"> Click for more details</a>
+      </div>
+
     </div>
     </div>
 
       <div class="col-sm-4">
-        <div class="card">
+        <div *ngIf="!sellerCard" class="card">
+          <!--<div class="card-header">-->
+            <!--<h4><strong>SELLER DETAILS</strong></h4>-->
+          <!--</div>-->
+          <!--<div class="card-body">-->
+            <!--<p class="description">{{ myAd.username }}</p>-->
+            <!--<p class="description">{{ myAd.email }}</p>-->
+            <!--<p class="description">{{ myAd.phone }}</p>-->
+          </div>
+        </div>
+        <div *ngIf="sellerCard" class="card">
           <div class="card-header">
           <h4><strong>SELLER DETAILS</strong></h4>
           </div>

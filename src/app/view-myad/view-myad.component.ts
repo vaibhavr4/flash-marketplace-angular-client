@@ -20,6 +20,7 @@ export class ViewMyadComponent implements OnInit {
   myAd;
   temp;
 images=[];
+sellerCard=false;
 
   getAd(adId)
   {
@@ -28,6 +29,11 @@ images=[];
       .then(myAd=>this.myAd=myAd)
       .then(()=>this.setImage(this.myAd.image));
 
+  }
+
+  setSeller()
+  {
+    this.sellerCard=true;
   }
 
   logout() {
