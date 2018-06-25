@@ -11,7 +11,7 @@ body{
 .header {
   padding: 10px;
   text-align: center;
-  background: peachpuff;
+  background: crimson;
 }
 .topnav {
   overflow: hidden;
@@ -32,12 +32,12 @@ body{
 }
 
 .topnav a:hover {
-  background-color: #117a8b;
+  background-color: #F3D8BD;
   color: white;
 }
 
 .topnav .active {
-  background-color: #117a8b;
+  background-color: #F3D8BD;
   color: white;
 }
 
