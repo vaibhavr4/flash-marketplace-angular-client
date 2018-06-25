@@ -33,11 +33,11 @@ body{
 
 .topnav a:hover {
   background-color: #F3D8BD;
-  color: white;
+  color: black;
 }
 
 .topnav .active {
   background-color: #F3D8BD;
-  color: white;
+  color: black;
 }
 
