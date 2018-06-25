@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {PostAdServiceClient} from "../services/postad.service.client.";
+import {UserServiceClient} from "../services/user.service.client";
 
 @Component({
   selector: 'app-my-ads-admin',
@@ -10,6 +11,7 @@ import {PostAdServiceClient} from "../services/postad.service.client.";
 export class MyAdsAdminComponent implements OnInit {
 
   constructor(private adService: PostAdServiceClient,
+              private userservice: UserServiceClient,
               private router: Router,
               private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.getAd(params['adId']));
@@ -25,6 +27,14 @@ export class MyAdsAdminComponent implements OnInit {
       .getAd(adId)
       .then(myAd=>this.myAd=myAd)
       .then(()=>this.setImage(this.myAd.image));
+
+  }
+
+  logout() {
+    this.userservice
+      .logout()
+      .then(() =>
+        this.router.navigate(['login']));
 
   }
 
