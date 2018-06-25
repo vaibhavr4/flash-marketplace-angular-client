@@ -42,7 +42,6 @@ import { MyAdsAdminComponent } from './my-ads-admin/my-ads-admin.component';
     AdminComponent,
     PostAdComponent,
     FileUploadTestComponent,
-    FileSelectDirective,
     AdDetailsComponent,
     MyAdsComponent,
     AdminAdControlComponent,
@@ -54,6 +53,7 @@ import { MyAdsAdminComponent } from './my-ads-admin/my-ads-admin.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    FileSelectDirective,
     routing
   ],
   providers: [
