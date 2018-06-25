@@ -21,6 +21,7 @@ export class ViewMyadComponent implements OnInit {
   temp;
 images=[];
 sellerCard=false;
+logged=false;
 
   getAd(adId)
   {
@@ -58,6 +59,15 @@ sellerCard=false;
 
   ngOnInit() {
 
+    this.userservice.profile()
+      .then(res => {
+          return res._id;
+        }
+      ).then(userId => {
+      if (userId !== null) {
+        this.logged = true;
+      }
+    });
   }
 
 }
