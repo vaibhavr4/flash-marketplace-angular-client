@@ -1,6 +1,6 @@
 export class PostAdServiceClient {
   createAd(ad) {
-       return fetch('http://localhost:4000/api/post-ad', {
+       return fetch('https://flash-marketplace-node.herokuapp.com/api/post-ad', {
       body: JSON.stringify(ad),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',
@@ -13,7 +13,7 @@ export class PostAdServiceClient {
   scrape_details(about)
   {
     const req={about};
-    return fetch('http://localhost:4000/api/scrape', {
+    return fetch('https://flash-marketplace-node.herokuapp.com/api/scrape', {
       method: 'post',
       body: JSON.stringify(req),
       credentials: 'include',
@@ -26,7 +26,7 @@ export class PostAdServiceClient {
   findAdsForUser()
   {
     console.log("In service to server");
-    const url = 'http://localhost:4000/api/acd';
+    const url = 'https://flash-marketplace-node.herokuapp.com/api/acd';
     return fetch(url, {
       credentials: 'include'
     }).then(response => response.json());
@@ -36,7 +36,7 @@ export class PostAdServiceClient {
 
   findAdsForUserid(userId)
   {
-    const url = 'http://localhost:4000/api/user/'+userId+'/content';
+    const url = 'https://flash-marketplace-node.herokuapp.com/api/user/'+userId+'/content';
     return fetch(url, {
       credentials: 'include'
     }).then(response => response.json());
@@ -44,7 +44,7 @@ export class PostAdServiceClient {
 
   deleteAd(adId)
   {
-    return fetch('http://localhost:4000/api/delad/'+adId, {
+    return fetch('https://flash-marketplace-node.herokuapp.com/api/delad/'+adId, {
       method: "DELETE",
       credentials: 'include', // include, same-origin, *omit
       headers: {
@@ -55,7 +55,7 @@ export class PostAdServiceClient {
 
   getAd(adId)
   {
-    const url = 'http://localhost:4000/api/myad/'+adId;
+    const url = 'https://flash-marketplace-node.herokuapp.com/api/myad/'+adId;
     return fetch(url, {
       credentials: 'include'
     }).then(response => response.json());

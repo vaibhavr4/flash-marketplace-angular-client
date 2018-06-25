@@ -7,7 +7,7 @@ import "rxjs/add/operator/do";
 //import the map function to be used with the http library
 import "rxjs/add/operator/map";
 import {UserServiceClient} from "../services/user.service.client";
-const URL = 'http://localhost:4000/api/upload';
+const URL = 'https://flash-marketplace-node.herokuapp.com/api/upload';
 
 @Component({
   selector: 'app-post-ad',

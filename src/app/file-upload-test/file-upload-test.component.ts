@@ -4,7 +4,7 @@ import { Http, Response } from '@angular/http';
 import "rxjs/add/operator/do";
 //import the map function to be used with the http library
 import "rxjs/add/operator/map";
-const URL = 'http://localhost:4000/api/upload';
+const URL = 'https://flash-marketplace-node.herokuapp.com/api/upload';
 @Component({
   selector: 'app-file-upload-test',
   templateUrl: './file-upload-test.component.html',
