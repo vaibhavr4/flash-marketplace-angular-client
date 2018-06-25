@@ -22,7 +22,15 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Ad Title</span>
         </div>
-        <input type="text" [(ngModel)]="title" placeholder="Ad title" id="title" name="title" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" [(ngModel)]="title" placeholder="Ad title" id="title" name="title" #name="ngModel" required class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div *ngIf="name.invalid" class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Ad title is required.
+        </div>
+
       </div>
 
       <div class="input-group mb-3">
@@ -47,7 +55,15 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Ad Description</span>
         </div>
-        <textarea placeholder="Description of product" class="form-control form-control-lg" id="description" rows="4" [(ngModel)]="description" aria-label="With textarea"></textarea>
+        <textarea placeholder="Description of product" class="form-control form-control-lg" id="description" rows="4" [(ngModel)]="description" aria-label="With textarea" name="description" #description="ngModel" required></textarea>
+      </div>
+
+      <div *ngIf="description.invalid" class="alert alert-danger">
+
+        <div *ngIf="description.errors.required">
+          Description is required.
+        </div>
+
       </div>
 
       <!--<div *ngIf="isPrice">-->
@@ -60,10 +76,18 @@
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
-        <input placeholder="Price of product" [(ngModel)]="price" id="price" name="title" #name="ngModel" type="text" class="form-control form-control-lg" aria-label="Amount (to the nearest dollar)">
+        <input placeholder="Price of product" [(ngModel)]="price" id="price" name="price" #price="ngModel" type="text" required class="form-control form-control-lg" aria-label="Amount (to the nearest dollar)">
         <div class="input-group-append">
           <span class="input-group-text">.00</span>
         </div>
+      </div>
+
+      <div *ngIf="price.invalid" class="alert alert-danger">
+
+        <div *ngIf="price.errors.required">
+          Price is required.
+        </div>
+
       </div>
 
       <div class="card">
@@ -105,22 +129,47 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Name</span>
         </div>
-        <input type="text" [(ngModel)]="username" placeholder="Name" id="name" name="name" #name="ngModel" class="form-control form-control-lg" aria-label="Name" aria-describedby="basic-addon1">
+        <input type="text" [(ngModel)]="username" placeholder="Name" id="name" name="name" #name="ngModel" required class="form-control form-control-lg" aria-label="Name" aria-describedby="basic-addon1">
+      </div>
+
+      <div *ngIf="name.invalid" class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon3">+1</span>
         </div>
-        <input type="text" [(ngModel)]="phone" placeholder="Phone Number" id="phone" name="phone" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" [(ngModel)]="phone" placeholder="Phone Number" id="phone" name="phone" #phone="ngModel" required class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div *ngIf="phone.invalid" class="alert alert-danger">
+
+        <div *ngIf="phone.errors.required">
+          Phone number is required.
+        </div>
+
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon4">Email</span>
         </div>
-        <input type="text" [(ngModel)]="email" placeholder="Email Address" id="email" name="email" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" [(ngModel)]="email" placeholder="Email Address" id="email" name="email" #email="ngModel" required class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
       </div>
+
+      <div *ngIf="email.invalid" class="alert alert-danger">
+
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+
+      </div>
+
       <div>
         <button (click)="postad()" class="btn btn-lg btn-dark btn-block">
           <i class="fa fa-refresh"></i>&nbsp;Post Ad
