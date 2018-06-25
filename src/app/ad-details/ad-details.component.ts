@@ -11,17 +11,29 @@ import {PostAdServiceClient} from "../services/postad.service.client.";
 export class AdDetailsComponent implements OnInit {
 
   constructor(private postservice: PostAdServiceClient,
+              private userService: UserServiceClient,
               private router: Router,
               private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.about=(params['about']));
   }
 about;
 ad;
+logged=false;
 
   ngOnInit() {
     console.log("ABOUTT:"+this.about);
     this.postservice.scrape_details(this.about)
       .then(ad=>this.ad=ad);
+
+    this.userService.profile()
+      .then(res => {
+          return res._id;
+        }
+      ).then(userId => {
+      if (userId !== null) {
+        this.logged = true;
+      }
+    });
 
   }
 
