@@ -60,6 +60,13 @@ export class PostAdServiceClient {
       credentials: 'include'
     }).then(response => response.json());
   }
+  findAdsByCategory(category)
+  {
+    const url = 'https://flash-marketplace-node.herokuapp.com/api/adscat/'+category;
+    return fetch(url, {
+      credentials: 'include'
+    }).then(response => response.json());
+  }
 
 
 }

@@ -14,6 +14,7 @@ export class SearchListComponent implements OnInit {
   search: String;
   category:String;
   searchList: SearchList[];
+  localsearchList=[];
   test;
   about: String;
   ad;
@@ -31,6 +32,10 @@ sample="&#x0024;1948";
     this.category = category;
     console.log("Search list component ts:"+this.search);
     console.log("Search list component ts:"+this.category);
+    this.postservice
+      .findAdsByCategory(category)
+      .then(searchads=>this.localsearchList=searchads);
+
     this.service
       .searchCraigs(search,category)
       .subscribe((response) => {
