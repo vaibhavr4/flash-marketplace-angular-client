@@ -21,7 +21,7 @@ import {SectionServiceClient} from "./services/section.service.client";
 import { PostAdComponent } from './post-ad/post-ad.component';
 import { FileUploadTestComponent } from './file-upload-test/file-upload-test.component';
 import {PostAdServiceClient} from "./services/postad.service.client.";
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
 import { AdDetailsComponent } from './ad-details/ad-details.component';
 import { MyAdsComponent } from './my-ads/my-ads.component';
 import { AdminAdControlComponent } from './admin-ad-control/admin-ad-control.component';
@@ -53,7 +53,7 @@ import { MyAdsAdminComponent } from './my-ads-admin/my-ads-admin.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FileSelectDirective,
+    FileUploadModule,
     routing
   ],
   providers: [
