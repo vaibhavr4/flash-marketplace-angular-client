@@ -59,7 +59,7 @@
       <p class="description">{{ myAd.description }}</p>
 
       <div *ngIf="logged" style="text-align:center">
-        <a (click)="setSeller()" class="btn btn-lg btn-dark"> Click for more details</a>
+        <a style="color: white" (click)="setSeller()" class="btn btn-lg btn-dark"> Click for more details</a>
       </div>
       <div *ngIf="!logged" style="text-align:center">
         <a routerLink="/login" class="btn btn-lg btn-dark"> Click for more details</a>
