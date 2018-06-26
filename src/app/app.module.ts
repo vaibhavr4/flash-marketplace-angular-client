@@ -28,6 +28,12 @@ import { AdminAdControlComponent } from './admin-ad-control/admin-ad-control.com
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { ViewMyadComponent } from './view-myad/view-myad.component';
 import { MyAdsAdminComponent } from './my-ads-admin/my-ads-admin.component';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angular4-social-login";
+
+let config = new AuthServiceConfig([{
+  id: GoogleLoginProvider.PROVIDER_ID,
+  provider: new GoogleLoginProvider("971318108998-1cs6v5m8j1c8cdocf8c4jcu9lu8jbbab.apps.googleusercontent.com")
+}]);
 
 @NgModule({
   declarations: [
@@ -53,6 +59,7 @@ import { MyAdsAdminComponent } from './my-ads-admin/my-ads-admin.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    SocialLoginModule.initialize(config),
     FileUploadModule,
     routing
   ],

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Route, Router} from '@angular/router';
 import {UserServiceClient} from "../services/user.service.client";
+import { AuthService, GoogleLoginProvider } from "angular4-social-login";
+import { SocialUser } from "angular4-social-login";
 
 @Component({
   selector: 'app-login',
@@ -40,7 +42,49 @@ user:{};
 
   }
 
-  constructor(private router: Router,
+
+  public signinWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+      .then(()=>
+        this.socialAuthService.authState.subscribe((user) => {
+          this.googleUser = user;
+
+          this.loggedIn = (user != null);
+          console.log("USER:"+this.email);
+
+          this.service
+            .findUsername(this.googleUser.email)
+            .then((usrname) => {
+              if (usrname !== null) {
+                this.router.navigate(['login']);
+                alert("Username already exists.. Please login to continue");
+              }
+              else {
+                this.service
+                  .createUser(this.googleUser.email,this.googleUser.name)
+                  .then(() =>
+                    this.router.navigate(['profile']));
+              }
+            });
+
+          // this.service.createUser(this.googleUser.email,this.googleUser.name)
+          //   .then(() =>
+          //     this.router.navigate(['profile']));
+
+
+
+        })
+      );
+
+
+
+  }
+
+
+
+
+  constructor(private socialAuthService: AuthService,
+              private router: Router,
               private service: UserServiceClient) { }
 
   ngOnInit() {

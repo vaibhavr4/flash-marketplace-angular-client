@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   _id;
   user ;
   username;
+  password;
   firstName;
   lastName;
   email;
@@ -28,6 +29,7 @@ export class ProfileComponent implements OnInit {
 
   update() {
     this.user.username = this.username;
+    this.user.password = this.password;
     this.user.firstName = this.firstName;
     this.user.lastName = this.lastName;
     this.user.email = this.email;
@@ -56,6 +58,7 @@ export class ProfileComponent implements OnInit {
 
     this.user=user;
     this.username=user.username;
+    this.password = user.password;
     this._id = user._id;
 
     this.firstName = user.firstName;
