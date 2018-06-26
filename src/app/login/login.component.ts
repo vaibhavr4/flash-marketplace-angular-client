@@ -11,6 +11,9 @@ import { SocialUser } from "angular4-social-login";
 })
 export class LoginComponent implements OnInit {
 
+  googleUser :SocialUser;
+  loggedIn: boolean;
+  email;
   message: String;
   username;
   password;
@@ -31,7 +34,6 @@ user:{};
   {
     console.log("In login component check:"+credentials.username);
     console.log("IN login component check:"+credentials.error);
-    //console.log("In login component check:"+JSON.stringify(credentials));
     console.log("CRED:"+credentials);
       if(credentials.user=="Invalid User" || this.password==undefined || this.username==undefined)
         this.message="Please enter correct credentials";
