@@ -32,7 +32,7 @@ import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angul
 
 let config = new AuthServiceConfig([{
   id: GoogleLoginProvider.PROVIDER_ID,
-  provider: new GoogleLoginProvider("971318108998-1cs6v5m8j1c8cdocf8c4jcu9lu8jbbab.apps.googleusercontent.com")
+  provider: new GoogleLoginProvider("971318108998-8u5hitd8isvf4ti9d8ajmpl8hnsqq144.apps.googleusercontent.com")
 }]);
 export function provideConfig() {
   return config;
