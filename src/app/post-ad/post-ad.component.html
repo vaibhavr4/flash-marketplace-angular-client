@@ -6,7 +6,6 @@
         <a class="danger" (click)="logout()">Logout</a>
       </div>
     </div>
-    <form #form="ngForm" novalidate>
     <div class="card-body">
   <div class="row">
     <div class="col-md-10">
@@ -23,9 +22,8 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Ad Title</span>
         </div>
-        <input type="text" [(ngModel)]="title" placeholder="Ad title" id="title" name="title" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1" #input required>
+        <input type="text" [(ngModel)]="title" placeholder="Ad title" id="title" name="title" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
       </div>
-      <div class="warningText" *ngIf='title === undefined || title.length < 1'> Ad Title Cannot Be Empty</div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -49,10 +47,8 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Ad Description</span>
         </div>
-        <textarea placeholder="Description of product" class="form-control form-control-lg" id="description" rows="4" [(ngModel)]="description" aria-label="With textarea" required></textarea>
+        <textarea placeholder="Description of product" class="form-control form-control-lg" id="description" rows="4" [(ngModel)]="description" aria-label="With textarea"></textarea>
       </div>
-
-      <div class="warningText" *ngIf='description === undefined || description.length < 1'> Description Cannot Be Empty</div>
 
       <!--<div *ngIf="isPrice">-->
         <!--<label for="price" class="fields">Price:</label>-->
@@ -64,11 +60,10 @@
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
-        <input placeholder="Price of product" [(ngModel)]="price" id="price" name="title" #name="ngModel" type="text" class="form-control form-control-lg" aria-label="Amount (to the nearest dollar)" #input required>
+        <input placeholder="Price of product" [(ngModel)]="price" id="price" name="title" #name="ngModel" type="text" class="form-control form-control-lg" aria-label="Amount (to the nearest dollar)">
         <div class="input-group-append">
           <span class="input-group-text">.00</span>
         </div>
-        <div class="warningText" *ngIf='price === undefined'> Price Cannot Be Empty</div>
       </div>
 
       <div class="card">
@@ -110,27 +105,24 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Name</span>
         </div>
-        <input type="text" [(ngModel)]="username" placeholder="Name" id="name" name="name" #name="ngModel" class="form-control form-control-lg" aria-label="Name" aria-describedby="basic-addon1" #input required>
+        <input type="text" [(ngModel)]="username" placeholder="Name" id="name" name="name" #name="ngModel" class="form-control form-control-lg" aria-label="Name" aria-describedby="basic-addon1">
       </div>
-      <div class="warningText" *ngIf='username === undefined || username.length < 1'> Username Cannot Be Empty</div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon3">+1</span>
         </div>
-        <input type="text" [(ngModel)]="phone" placeholder="Phone Number" id="phone" name="phone" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1" #input required>
+        <input type="text" [(ngModel)]="phone" placeholder="Phone Number" id="phone" name="phone" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
       </div>
-      <div class="warningText" *ngIf='phone === undefined || phone.length < 10 || phone.length >10 || phone.toString() ==="/^[A-z]+$/"'> Enter a valid phone number</div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon4">Email</span>
         </div>
-        <input type="text" [(ngModel)]="email" placeholder="Email Address" id="email" name="email" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1" #input required>
+        <input type="text" [(ngModel)]="email" placeholder="Email Address" id="email" name="email" #name="ngModel" class="form-control form-control-lg" aria-label="Username" aria-describedby="basic-addon1">
       </div>
-      <div class="warningText" *ngIf='email === undefined || email.length < 11'> Enter a valid email address</div>
       <div>
-        <button (click)="postad()" class="btn btn-lg btn-dark btn-block" [disabled]="!form.valid">
+        <button (click)="postad()" class="btn btn-lg btn-dark btn-block">
           <i class="fa fa-refresh"></i>&nbsp;Post Ad
         </button>
       </div>
@@ -139,7 +131,6 @@
         <a class="btn btn-lg btn-dark margin" routerLink="/home"><i class="fas fa-home"></i>&nbsp;Home</a>
       </div>
     </div>
-    </form>
 
   </div>
 </div>
