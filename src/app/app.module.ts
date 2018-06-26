@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule , ReactiveFormsModule} from "@angular/forms";
 
 import { WhiteBoardComponent } from './white-board/white-board.component';
 
@@ -64,7 +64,8 @@ export function provideConfig() {
     HttpModule,
     SocialLoginModule,
     FileUploadModule,
-    routing
+    routing,
+    ReactiveFormsModule
   ],
   providers: [
     UserServiceClient,
