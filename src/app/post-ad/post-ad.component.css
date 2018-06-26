@@ -32,3 +32,9 @@ a.danger{
 a.danger:hover, a.danger:active {
   background-color: #EE7F7F;
 }
+
+.warningText{
+  color: red;
+  margin-bottom: 5px;
+}
+
