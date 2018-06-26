@@ -34,6 +34,9 @@ let config = new AuthServiceConfig([{
   id: GoogleLoginProvider.PROVIDER_ID,
   provider: new GoogleLoginProvider("971318108998-1cs6v5m8j1c8cdocf8c4jcu9lu8jbbab.apps.googleusercontent.com")
 }]);
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -59,7 +62,7 @@ let config = new AuthServiceConfig([{
     BrowserModule,
     FormsModule,
     HttpModule,
-    SocialLoginModule.initialize(config),
+    SocialLoginModule,
     FileUploadModule,
     routing
   ],
@@ -67,7 +70,11 @@ let config = new AuthServiceConfig([{
     UserServiceClient,
     SearchServiceClient,
     SectionServiceClient,
-    PostAdServiceClient
+    PostAdServiceClient,
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
   ],
   bootstrap: [AppComponent]
 })
