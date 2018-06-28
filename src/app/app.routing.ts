@@ -13,6 +13,7 @@ import {MyAdsComponent} from "./my-ads/my-ads.component";
 import {AdminProfileComponent} from "./admin-profile/admin-profile.component";
 import {ViewMyadComponent} from "./view-myad/view-myad.component";
 import {MyAdsAdminComponent} from "./my-ads-admin/my-ads-admin.component";
+import {AdminRegisterComponent} from "./admin-register/admin-register.component";
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: WhiteBoardComponent},
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'user-admin', component: AdminComponent},
   { path: 'user/:userId/content', component: AdminComponent },
   { path: 'admin-profile', component: AdminProfileComponent },
+  { path: 'admin-register', component: AdminRegisterComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'profile/:userId', component: ProfileComponent},
