@@ -7,7 +7,7 @@ export class UserServiceClient {
 
   findUserByName(userName) {
     console.log("ANGULAR SERVICE NAME:"+userName);
-    return fetch('http://localhost:4000/api/username/' +userName)
+    return fetch('https://flash-marketplace-node.herokuapp.com/api/username/' +userName)
       .then(response => response.json());
   }
 
