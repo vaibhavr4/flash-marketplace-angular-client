@@ -6,7 +6,7 @@ import { Http, Response } from '@angular/http';
 import "rxjs/add/operator/do";import "rxjs/add/operator/map";
 import {UserServiceClient} from "../services/user.service.client";
 
-const URL = 'http://localhost:4000/api/upload';
+const URL = 'https://flash-marketplace-node.herokuapp.com/api/upload';
 
 
 @Component({
