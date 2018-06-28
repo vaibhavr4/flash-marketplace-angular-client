@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
     this.route.params.subscribe(params => this._id=(params['userId']));
   }
 
+  admin_user=false;
   _id;
   user ;
   username;
@@ -83,10 +84,17 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    this.service
-      .profile()
-      .then(user => this.setUser(user));
-
+    if(this._id===undefined) {
+      this.service
+        .profile()
+        .then(user => this.setUser(user));
+    }
+    else {
+      this.service
+        .findUserById(this._id)
+        .then(user=> this.setUser(user));
+      this.admin_user = true;
+    }
     // this.adService.findAdsForUser()
     //   .then(ads=>this.ads=ads);
     //this.username = user.username);
