@@ -24,6 +24,7 @@ export class UpdateAdComponent implements OnInit {
     this.route.params.subscribe(params => this._id=(params['adId']));
   }
 
+  currentuser;
   title;
   _id;
   ad;
@@ -103,11 +104,19 @@ export class UpdateAdComponent implements OnInit {
       };
       console.log("IMAGE:" + this.image);
 
-      this.service
-        .updateAd(this.ad)
-        .then(() =>
-          this.router.navigate(['home']));
-      alert("Ad has been updated successfully");
+      if(this.currentuser==="admin")
+      {
+        this.service
+          .updateAd(this.ad)
+          .then(() =>
+            this.router.navigate(['user-admin']));
+      }
+      else {
+        this.service
+          .updateAd(this.ad)
+          .then(() =>
+            this.router.navigate(['home']));
+      }
     }
   }
 
@@ -123,6 +132,10 @@ export class UpdateAdComponent implements OnInit {
     this.service
       .getAd(this._id)
       .then((ad)=>this.setAd(ad));
+    this.userservice
+      .profile()
+      .then(user => this.currentuser=user.username);
+
     this.uploader.onAfterAddingFile = (file)=> { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
       console.log("ImageUpload:uploaded:", item, status, response);
