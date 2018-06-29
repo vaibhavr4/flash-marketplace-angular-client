@@ -63,6 +63,23 @@ export class UserServiceClient {
     });
   }
 
+  createUserByAdmin(username, password) {
+    const user = {
+      username: username,
+      password: password
+    };
+    return fetch('https://flash-marketplace-node.herokuapp.com/api/admin-user', {
+      body: JSON.stringify(user),
+      credentials: 'include', // include, same-origin, *omit
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+  }
+
+
+
   findUsername(username) {
 
     const credentials = {
