@@ -15,6 +15,8 @@ import {ViewMyadComponent} from "./view-myad/view-myad.component";
 import {MyAdsAdminComponent} from "./my-ads-admin/my-ads-admin.component";
 import {AdminRegisterComponent} from "./admin-register/admin-register.component";
 import {UpdateAdComponent} from "./update-ad/update-ad.component";
+import {MyMessagesComponent} from "./my-messages/my-messages.component";
+
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: WhiteBoardComponent},
@@ -29,11 +31,13 @@ const appRoutes: Routes = [
   { path: 'profile/:userId', component: ProfileComponent},
   {path: 'result', component: ResultSectionComponent},
   { path: 'post-ad', component: PostAdComponent},
+  { path: 'message', component: ViewMyadComponent},
   { path: 'update-ad/:adId', component: UpdateAdComponent },
   { path: 'api/upload', component: FileUploadTestComponent},
   { path:'ad-details', component: AdDetailsComponent},
   { path:'my-ads',component: MyAdsComponent },
   { path:'my-ad/:adId',component: ViewMyadComponent },
+  { path:'my-messages',component: MyMessagesComponent },
   { path:'admin-my-ad/:adId',component: MyAdsAdminComponent },
   { path:'ad-details/:about', component: AdDetailsComponent},
   { path: '**', component: WhiteBoardComponent} // last
