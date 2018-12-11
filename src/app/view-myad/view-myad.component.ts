@@ -69,7 +69,7 @@ images=[];
     console.log("IMAGES IN:"+images.length);
       for(var i=0; i<images.length; i++)
       {
-        this.temp= "http://localhost:4000"+images[i];
+        this.temp= "https://flash-marketplace-node.herokuapp.com"+images[i];
         console.log("CONSTRUCTED IMAGE:"+this.temp);
        this.images.push(this.temp);
       }
