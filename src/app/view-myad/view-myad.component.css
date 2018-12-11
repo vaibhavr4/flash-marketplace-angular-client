@@ -16,7 +16,7 @@ nav.navbar.navbar-default{
 
 .navbarheading{
   font-weight: bold;
-  color: darkturquoise;
+  color: #117a8b;
   text-align: center;
 }
 
@@ -72,7 +72,7 @@ nav.navbar.navbar-default{
 }
 
 .footer-distributed h3 span{
-  color:  	moccasin;
+  color:  #5383d3;
 }
 
 
@@ -134,7 +134,7 @@ nav.navbar.navbar-default{
 }
 
 .footer-distributed .footer-center p a{
-  color:  	moccasin;
+  color:  #5383d3;
   text-decoration: none;;
 }
 
